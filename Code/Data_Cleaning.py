@@ -4,6 +4,7 @@ import pandas as pd
 def clean_data(df):
     # Remove repeated articles
     df = df.drop_duplicates(subset='Title')
+    print('Success! - Duplicate Removal')
     return df
 
 
@@ -13,9 +14,11 @@ def filter_article_dataset(df):
         existing_df = pd.read_csv('articles_features.csv')
         existing_titles = set(existing_df['Title'])
         df_unique = df[~df['Title'].isin(existing_titles)]
+        print('Success! - Data Filtering')
         return df_unique
 
     except FileNotFoundError:
+        print('Success! - Data Filtering')
         return df
 
 
@@ -30,4 +33,5 @@ def data_saver(df, filename='articles_features'):
     merged_df = pd.concat([existing_df, df], ignore_index=True)
 
     # Save the merged DataFrame to the CSV file
-    merged_df.to_csv(filename + '.csv', index=False, encoding='utf-8-sig')
+    merged_df.to_csv('Data/' + filename + '.csv', index=False, encoding='utf-8-sig')
+    print('Success! - Data Saved')

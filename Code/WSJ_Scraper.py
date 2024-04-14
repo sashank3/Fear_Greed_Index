@@ -1,6 +1,7 @@
-import requests
-from bs4 import BeautifulSoup
 import time
+import requests
+import pandas as pd
+from bs4 import BeautifulSoup
 from datetime import datetime, timedelta
 
 
@@ -130,6 +131,8 @@ def scrape_wsj_business():
             print('Error: Failed to retrieve webpage.')
 
     # Return the titles and text content as a tuple of lists
-    return articles_data
+    df = pd.DataFrame(articles_data, columns=['Title', 'Time', 'Link'])
+    print('Success! - Web Scraping')
+    return df
 
 
