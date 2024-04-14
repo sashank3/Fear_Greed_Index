@@ -1,0 +1,3 @@
+Subdomain,EMA_7_days,EMA_21_days,EMA_60_days,Label_7_days,Label_21_days,Label_60_days
+Banking,45.0,42.0,30.0,Fear,Fear,Fear
+Healthcare,44.0,42.0,60.0,Fear,Fear,Greed

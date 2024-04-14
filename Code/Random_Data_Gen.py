@@ -1,46 +1,32 @@
-import sqlite3
+import pandas as pd
 import random
+from datetime import datetime, timedelta
 
-# Connect to the SQLite database
-conn = sqlite3.connect('articles.db')
-cursor = conn.cursor()
+# Read existing data from the CSV file
+df = pd.read_csv('articles_test.csv')
 
-# Add new columns 'sentiment' and 'subdomain' to the articles table
-cursor.execute('''ALTER TABLE articles 
-                  ADD COLUMN sentiment INTEGER''')
+# Duplicate each row twice and append them to the DataFrame
+df = pd.concat([df] * 4, ignore_index=True)
 
-cursor.execute('''ALTER TABLE articles 
-                  ADD COLUMN subdomain TEXT''')
+# Add new columns 'sentiment' and 'subdomain' to the DataFrame
+df['sentiment'] = [random.randint(1, 5) for _ in range(len(df))]
+df['subdomain'] = [random.choice(['Banking', 'Healthcare']) for _ in range(len(df))]
 
-# Define the list of subdomains
-subdomains = ['Banking', 'Insurance', 'Real Estate', 'Cryptocurrency', 'Industrials',
-              'Computers and Information Technology', 'Automotive', 'Retail', 'Energy',
-              'Healthcare', 'Materials', 'Telecom']
+# Calculate the number of rows in the DataFrame
+num_rows = len(df)
 
-# Update each row in the table with random values for 'sentiment' and 'subdomain'
-cursor.execute('''SELECT id FROM articles''')
-article_ids = cursor.fetchall()
+# Generate a series of dates starting from the current day and going back
+# to the current day minus the number of rows
+start_date = datetime.now()
+dates = [start_date - timedelta(days=i) for i in range(num_rows)]
 
-for article_id in article_ids:
-    sentiment = random.randint(1, 5)  # Random integer between 1 and 5
-    subdomain = random.choice(subdomains)  # Randomly choose a subdomain from the list
-    cursor.execute('''UPDATE articles 
-                      SET sentiment = ?, subdomain = ?
-                      WHERE id = ?''', (sentiment, subdomain, article_id[0]))
+# Update the 'time' column for each row with the generated dates
+df['time'] = [date.strftime('%Y-%m-%d %H:%M:%S') for date in dates]
 
-cursor.execute('''SELECT * FROM articles''')
-rows = cursor.fetchall()
+# Save the DataFrame to a new CSV file
+df.to_csv('articles_modified.csv', index=False)
 
-# Print the column names
-column_names = [description[0] for description in cursor.description]
-print(column_names)
-
-# Print each row of data
-for row in rows:
-    print(row)
-
-# Commit changes and close connection
-conn.commit()
-conn.close()
+# Print the modified DataFrame
+print(df)
 
 print("Columns 'sentiment' and 'subdomain' added successfully.")

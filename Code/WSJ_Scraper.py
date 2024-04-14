@@ -2,21 +2,21 @@ import requests
 from bs4 import BeautifulSoup
 import time
 from datetime import datetime, timedelta
-import sqlite3
 
 
 # Helper functions
 def convert_relative_time(relative_time):
+
     if 'hour' in relative_time:
         hours_ago = int(relative_time.split()[0])
         return (datetime.now() - timedelta(hours=hours_ago)).strftime('%Y-%m-%d %H:%M')
 
-    elif 'day' in relative_time:
-        days_ago = int(relative_time.split()[0])
-        return (datetime.now() - timedelta(days=days_ago)).strftime('%Y-%m-%d %H:%M')
+    elif '2024' in relative_time:
+        parsed_date = datetime.strptime(relative_time, '%B %d, %Y')
+        return parsed_date.strftime('%Y-%m-%d %H:%M')
     # Add more conditions for other units if needed
     else:
-        return None  # Handle unsupported formats
+        return datetime.now().strftime('%Y-%m-%d %H:%M')
 
 
 # Function to scrape the webpage
@@ -41,9 +41,26 @@ def scrape_wsj_business():
             # 'https://www.wsj.com/finance/investing']
 
     # Define custom headers to mimic a real web browser
+
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
-                      'Chrome/58.0.3029.110 Safari/537.36'
+        'Pragma': 'no-cache',
+        'Origin': 'https://www.wsj.com',
+        'Accept-Language': 'en-US,en;q=0.9',
+        'Sec-WebSocket-Key': 'A/siKlupV2NvtfZwYZ3f3Q==',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36 Edg/122.0.0.0',
+        'Upgrade': 'websocket',
+        'Cache-Control': 'no-cache',
+        'Connection': 'Upgrade',
+        'Sec-WebSocket-Version': '13',
+        'Sec-WebSocket-Extensions': 'permessage-deflate; client_max_window_bits',
+    }
+
+    params = {
+        'transport': 'webSockets',
+        'clientProtocol': '2.1',
+        'connectionToken': '776a6d01-9b67-4c26-a392-8381c94e4700:',
+        'connectionData': '[{"name":"mainhub"}]',
+        'tid': '0',
     }
 
     # Initialize lists to store the titles and text content of the articles
@@ -55,7 +72,7 @@ def scrape_wsj_business():
         time.sleep(2)
 
         # Send a GET request to the URL with custom headers
-        response = requests.get(url, headers=headers)
+        response = requests.get(url, params=params, headers=headers)
 
         # Check if the request was successful (status code 200)
         if response.status_code == 200:
@@ -67,15 +84,45 @@ def scrape_wsj_business():
 
             # Loop through each article and extract the title and text content
             for article in articles:
-                # Find the next <p> tag after the <h3> tag
-                p_tag = article.find_next_sibling('p')
-                if p_tag:
-                    title = article.text.strip()
-                    content = p_tag.text.strip()
-                    time_tag = p_tag.find_next('p', class_=lambda c: c and 'TimeTag' in c)
-                    if time_tag:
-                        time_formatted = time_tag.text.strip()
-                    articles_data.append((title, content, convert_relative_time(time_formatted)))
+
+
+                # Find the first <a> tag within the <h3> tag
+
+                # if a_tag:
+                #     # Extract the href attribute
+                #     href = a_tag['href']
+                #
+                #     # Send a GET request to the linked page
+                #     linked_response = requests.get(href, params=params, headers=headers)
+                #     print(linked_response)
+                #     if linked_response.status_code == 200:
+                #         # Parse the HTML content of the linked page
+                #         linked_soup = BeautifulSoup(linked_response.text, 'html.parser')
+                #
+                #         # Find all the paragraphs on the linked page
+                #         paragraphs = linked_soup.find_all('p')
+                #
+                #         # Extract the text content of each paragraph and append to content
+                #         content = ' '.join([p.text.strip() for p in paragraphs])
+                #     else:
+                #         # If the request to the linked page was not successful, skip this article
+                #         print(f'Error: Failed to retrieve content from {href}')
+                #         break
+
+                    # Extract the title from the anchor tag
+                a_tag = article.find('a')
+                href = a_tag['href']
+                title = article.text.strip()
+
+                # Extract the relative time
+                time_tag = article.find_next('p', class_=lambda c: c and 'TimeTag' in c)
+                time_formatted = None
+                if time_tag:
+                    time_formatted = time_tag.text.strip()
+
+                # Append the extracted information to articles_data
+                articles_data.append((title, convert_relative_time(time_formatted), href))
+
 
 
         else:
@@ -85,32 +132,4 @@ def scrape_wsj_business():
     # Return the titles and text content as a tuple of lists
     return articles_data
 
-
-def save_to_database(articles_data):
-    # Connect to the SQLite database
-    conn = sqlite3.connect('articles.db')
-    cursor = conn.cursor()
-
-    # Create the articles table if it doesn't exist
-    cursor.execute('''CREATE TABLE IF NOT EXISTS articles
-                      (id INTEGER PRIMARY KEY AUTOINCREMENT,
-                      title TEXT,
-                      content TEXT,
-                      time TEXT)''')
-
-    # Insert the articles data into the database
-    cursor.executemany('''INSERT INTO articles (title, content, time)
-                          VALUES (?, ?, ?)''', articles_data)
-
-    # Commit changes and close connection
-    conn.commit()
-    conn.close()
-
-
-# Scrape the webpage and get articles data
-articles_data = scrape_wsj_business()
-print(articles_data)
-
-# Save the articles data to SQLite database
-save_to_database(articles_data)
 

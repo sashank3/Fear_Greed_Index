@@ -1,0 +1,484 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20232.23.0611.2007                               -->
+<workbook original-version='18.1' source-build='2023.2.0 (20232.23.0611.2007)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource caption='ema_results' inline='true' name='federated.1fpf8e10jxheaj13i6nze0i45ar9' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='ema_results' name='textscan.1114un4136sudy10h6746095qiub'>
+            <connection class='textscan' directory='C:/Users/sasre/OneDrive/Desktop/University/2024_Special_DS/Fear_Greed_Index/Code' filename='ema_results.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.1114un4136sudy10h6746095qiub' name='ema_results.csv' table='[ema_results#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='Subdomain' ordinal='0' />
+            <column datatype='real' name='EMA_7_days' ordinal='1' />
+            <column datatype='real' name='EMA_21_days' ordinal='2' />
+            <column datatype='real' name='EMA_60_days' ordinal='3' />
+            <column datatype='string' name='Label_7_days' ordinal='4' />
+            <column datatype='string' name='Label_21_days' ordinal='5' />
+            <column datatype='string' name='Label_60_days' ordinal='6' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.1114un4136sudy10h6746095qiub' name='ema_results.csv' table='[ema_results#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='Subdomain' ordinal='0' />
+            <column datatype='real' name='EMA_7_days' ordinal='1' />
+            <column datatype='real' name='EMA_21_days' ordinal='2' />
+            <column datatype='real' name='EMA_60_days' ordinal='3' />
+            <column datatype='string' name='Label_7_days' ordinal='4' />
+            <column datatype='string' name='Label_21_days' ordinal='5' />
+            <column datatype='string' name='Label_60_days' ordinal='6' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[ema_results.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Subdomain</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Subdomain]</local-name>
+            <parent-name>[ema_results.csv]</parent-name>
+            <remote-alias>Subdomain</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[ema_results.csv_87A0A42589C24AE6A15F5A2C9CDDF945]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EMA_7_days</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[EMA_7_days]</local-name>
+            <parent-name>[ema_results.csv]</parent-name>
+            <remote-alias>EMA_7_days</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[ema_results.csv_87A0A42589C24AE6A15F5A2C9CDDF945]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EMA_21_days</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[EMA_21_days]</local-name>
+            <parent-name>[ema_results.csv]</parent-name>
+            <remote-alias>EMA_21_days</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[ema_results.csv_87A0A42589C24AE6A15F5A2C9CDDF945]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EMA_60_days</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[EMA_60_days]</local-name>
+            <parent-name>[ema_results.csv]</parent-name>
+            <remote-alias>EMA_60_days</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[ema_results.csv_87A0A42589C24AE6A15F5A2C9CDDF945]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Label_7_days</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Label_7_days]</local-name>
+            <parent-name>[ema_results.csv]</parent-name>
+            <remote-alias>Label_7_days</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[ema_results.csv_87A0A42589C24AE6A15F5A2C9CDDF945]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Label_21_days</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Label_21_days]</local-name>
+            <parent-name>[ema_results.csv]</parent-name>
+            <remote-alias>Label_21_days</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[ema_results.csv_87A0A42589C24AE6A15F5A2C9CDDF945]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Label_60_days</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Label_60_days]</local-name>
+            <parent-name>[ema_results.csv]</parent-name>
+            <remote-alias>Label_60_days</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[ema_results.csv_87A0A42589C24AE6A15F5A2C9CDDF945]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='0' datatype='integer' name='[Calculation_2740158962678714371]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='0' />
+      </column>
+      <column caption='1-7D' datatype='real' name='[Calculation_2740158962681548807]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='1 - [EMA_7_days]' />
+      </column>
+      <column caption='EMA 21 days' datatype='real' name='[EMA_21_days]' role='measure' type='quantitative' />
+      <column caption='EMA 60 days' datatype='real' name='[EMA_60_days]' role='measure' type='quantitative' />
+      <column caption='EMA 7 days' datatype='real' name='[EMA_7_days]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='ema_results.csv' datatype='table' name='[__tableau_internal_object_id__].[ema_results.csv_87A0A42589C24AE6A15F5A2C9CDDF945]' role='measure' type='quantitative' />
+      <column-instance column='[__tableau_internal_object_id__].[ema_results.csv_87A0A42589C24AE6A15F5A2C9CDDF945]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:ema_results.csv_87A0A42589C24AE6A15F5A2C9CDDF945:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_2740158962678714371]' derivation='Sum' name='[sum:Calculation_2740158962678714371:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_2740158962681548807]' derivation='Sum' name='[sum:Calculation_2740158962681548807:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[EMA_21_days]' derivation='Sum' name='[sum:EMA_21_days:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[EMA_60_days]' derivation='Sum' name='[sum:EMA_60_days:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[EMA_7_days]' derivation='Sum' name='[sum:EMA_7_days:qk]' pivot='key' type='quantitative' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.1fpf8e10jxheaj13i6nze0i45ar9].[none:Calculation_2740158962678677505:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.1fpf8e10jxheaj13i6nze0i45ar9].[none:Calculation_2740158962681171974:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.1fpf8e10jxheaj13i6nze0i45ar9].[sum:Calculation_2740158962678677505:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.1fpf8e10jxheaj13i6nze0i45ar9].[__tableau_internal_object_id__].[cnt:ema_results.csv_87A0A42589C24AE6A15F5A2C9CDDF945:qk]&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;[federated.1fpf8e10jxheaj13i6nze0i45ar9].[sum:EMA_60_days:qk]&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;[federated.1fpf8e10jxheaj13i6nze0i45ar9].[sum:Calculation_2740158962681548807:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.1fpf8e10jxheaj13i6nze0i45ar9]&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;[federated.1fpf8e10jxheaj13i6nze0i45ar9].[sum:EMA_21_days:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.1fpf8e10jxheaj13i6nze0i45ar9].[sum:Calculation_2740158962678714371:qk]&quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;[federated.1fpf8e10jxheaj13i6nze0i45ar9].[sum:EMA_7_days:qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='Subdomain' />
+        <field-sort-custom-order field='EMA_7_days' />
+        <field-sort-custom-order field='Calculation_2740158962681548807' />
+        <field-sort-custom-order field='EMA_21_days' />
+        <field-sort-custom-order field='EMA_60_days' />
+        <field-sort-custom-order field='Label_7_days' />
+        <field-sort-custom-order field='Label_21_days' />
+        <field-sort-custom-order field='Label_60_days' />
+        <field-sort-custom-order field='Geometry (generated)' />
+        <field-sort-custom-order field='Latitude (generated)' />
+        <field-sort-custom-order field='Longitude (generated)' />
+        <field-sort-custom-order field='Calculation_2740158962678714371' />
+        <field-sort-custom-order field=':Measure Names' />
+        <field-sort-custom-order field='Multiple Values' />
+      </field-sort-info>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='ema_results.csv' id='ema_results.csv_87A0A42589C24AE6A15F5A2C9CDDF945'>
+            <properties context=''>
+              <relation connection='textscan.1114un4136sudy10h6746095qiub' name='ema_results.csv' table='[ema_results#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='Subdomain' ordinal='0' />
+                  <column datatype='real' name='EMA_7_days' ordinal='1' />
+                  <column datatype='real' name='EMA_21_days' ordinal='2' />
+                  <column datatype='real' name='EMA_60_days' ordinal='3' />
+                  <column datatype='string' name='Label_7_days' ordinal='4' />
+                  <column datatype='string' name='Label_21_days' ordinal='5' />
+                  <column datatype='string' name='Label_60_days' ordinal='6' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ema_results' name='federated.1fpf8e10jxheaj13i6nze0i45ar9' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1fpf8e10jxheaj13i6nze0i45ar9'>
+            <column caption='1' datatype='integer' name='[Calculation_2740158962681171974]' role='measure' type='quantitative' user:unnamed='Sheet 1'>
+              <calculation class='tableau' formula='1' />
+            </column>
+            <column caption='1-7D' datatype='real' name='[Calculation_2740158962681548807]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='1 - [EMA_7_days]' />
+            </column>
+            <column caption='EMA 7 days' datatype='real' name='[EMA_7_days]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Subdomain]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_2740158962681171974]' derivation='None' name='[none:Calculation_2740158962681171974:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Subdomain]' derivation='None' name='[none:Subdomain:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_2740158962681548807]' derivation='Sum' name='[sum:Calculation_2740158962681548807:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[EMA_7_days]' derivation='Sum' name='[sum:EMA_7_days:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1fpf8e10jxheaj13i6nze0i45ar9].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1fpf8e10jxheaj13i6nze0i45ar9].[sum:Calculation_2740158962681548807:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1fpf8e10jxheaj13i6nze0i45ar9].[sum:EMA_7_days:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.1fpf8e10jxheaj13i6nze0i45ar9].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.1fpf8e10jxheaj13i6nze0i45ar9].[sum:Calculation_2740158962681548807:qk]&quot;</bucket>
+              <bucket>&quot;[federated.1fpf8e10jxheaj13i6nze0i45ar9].[sum:EMA_7_days:qk]&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <filter class='categorical' column='[federated.1fpf8e10jxheaj13i6nze0i45ar9].[none:Subdomain:nk]'>
+            <groupfilter function='member' level='[none:Subdomain:nk]' member='&quot;Banking&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1fpf8e10jxheaj13i6nze0i45ar9].[none:Subdomain:nk]</column>
+            <column>[federated.1fpf8e10jxheaj13i6nze0i45ar9].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.1fpf8e10jxheaj13i6nze0i45ar9].[none:Calculation_2740158962681171974:qk]' scope='cols' value='false' />
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+            <encoding attr='space' class='1' field='[federated.1fpf8e10jxheaj13i6nze0i45ar9].[none:Calculation_2740158962681171974:qk]' field-type='quantitative' fold='true' scope='cols' synchronized='true' type='space' />
+            <format attr='display' class='1' field='[federated.1fpf8e10jxheaj13i6nze0i45ar9].[none:Calculation_2740158962681171974:qk]' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='dropline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Shape' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <lod column='[federated.1fpf8e10jxheaj13i6nze0i45ar9].[Multiple Values]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='2.6408839225769043' />
+                <format attr='mark-color' value='#ffffff' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.1fpf8e10jxheaj13i6nze0i45ar9].[none:Calculation_2740158962681171974:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Shape' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <lod column='[federated.1fpf8e10jxheaj13i6nze0i45ar9].[Multiple Values]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='4.0442090034484863' />
+                <format attr='mark-color' value='#f28e2b' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='4' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.1fpf8e10jxheaj13i6nze0i45ar9].[none:Calculation_2740158962681171974:qk]' x-index='1'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.1fpf8e10jxheaj13i6nze0i45ar9].[:Measure Names]' />
+              <lod column='[federated.1fpf8e10jxheaj13i6nze0i45ar9].[Multiple Values]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='3.6574585437774658' />
+                <format attr='mark-color' value='#ffffff' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols>([federated.1fpf8e10jxheaj13i6nze0i45ar9].[none:Calculation_2740158962681171974:qk] + [federated.1fpf8e10jxheaj13i6nze0i45ar9].[none:Calculation_2740158962681171974:qk])</cols>
+      </table>
+      <simple-id uuid='{C7405814-2B35-4A5F-BB6D-ABA419B80DB8}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='4' param='[federated.1fpf8e10jxheaj13i6nze0i45ar9].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.1fpf8e10jxheaj13i6nze0i45ar9].[:Measure Names]</field>
+            <field>[federated.1fpf8e10jxheaj13i6nze0i45ar9].[none:Calculation_2740158962681171974:qk]</field>
+            <field>[federated.1fpf8e10jxheaj13i6nze0i45ar9].[none:Subdomain:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{5FDB259B-CA88-465E-ABD8-833EE9BC71CD}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAALUElEQVR4nO3d63NU933H8ffvnLMraS+6SwhdLDAIgWNiXJymcWo7U7tN0jTt9EEnM8mD
+      dvoX5XEeZMaZPMiDpE06TW9p60nddGJcoMYBDLZkIwxCiwEhrS67e8759cFPdiLERbfVgf19
+      XjMatCNYfZk5791z23OMtdYi4qkIQA2Ir6JPv6lUKhQKhSxnEdlznwVQKBQol8tZziKy54Ks
+      BxDJkgIQrykA8ZoCEK8pAPGaAhCvKQDxmgIQrykA8ZoCEK8pAPGaAhCvKQDxmgIQrykA8ZoC
+      EK8pAPGaAhCvKQDxmgIQrykA8ZoCEK8pAPGaAhCvKQDxmgIQrykA8ZoCEK8pAPGaAhCvKQDx
+      mgIQrykA8ZoCEK8pAPGaAhCvKQDxmgIQrykA8ZoCEK8pAPGaAhCvKQDxmgIQrykA8ZoCEK8p
+      APGaAhCvKQDxmgIQrykA8ZoCEK8pAPGaAhCvRVkPIPK7rE2hsYJduUO6MItduQONJWxSB2vB
+      GEzUjsmXMYVeTNeI+z7Xvq3fZ6xDtVqlXC7v8n9H5OFs0sAuXCe5fpZ0YRawmFyHW7hLQ+7P
+      fBHCPBjjIohXsbVF7PJt0oVr2FoVGssQ5gm6nyIc+T1MsR9jHr2CowBkz9mkQVq5QPzxaWgs
+      E3SPEQ4/j+kcwQTh7/xF675SCzYlsRYbBBhjCAKzYQG3cZ309hTJjXdJF64RFAeJxl/E9Iw/
+      MAYFIHsmXb5FfPnfsNUK4fAJwtEvYPKFtR+msLQMn9yG+QVYWIS7i1CrQxxDkjLdBjPFHEEY
+      EIQhbe0dFIoliuUyxVKZrp5ecvk8xpjf/r6pN7AL1wn6DhNNvIYJ8+tmUgDSdOnSTeKLP8em
+      DXKTXyfoGnU/aDTg+hzMXIO5T2Cx6l7xH2CqI2C6ED7w5yYIKJU76ekfYHD/MF09PQRBiLUp
+      6dwF4iu/wnT0kjv2Z5hch/s3CkCaxdYWabz7YzAh0TPfJOjoca/0N2/BBx/BlY9htbbp53tU
+      APcqlsrsGxllaHSMYqmMtZb09jTxpX8i6D9CdPhVBSC7z9qU5MM3SW6cI/e5v3Sv+GnqXu3f
+      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
+      rkJggg==
+    </thumbnail>
+  </thumbnails>
+</workbook>
