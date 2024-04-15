@@ -2,7 +2,8 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 
 
 def load_model():
-    model = AutoModelForCausalLM.from_pretrained("microsoft/phi-2", torch_dtype="auto", trust_remote_code=True).to("cuda")
+    model = AutoModelForCausalLM.from_pretrained("microsoft/phi-2", torch_dtype="auto", trust_remote_code=True).to(
+        "cuda")
     tokenizer = AutoTokenizer.from_pretrained("microsoft/phi-2", trust_remote_code=True)
     return model, tokenizer
 
@@ -17,8 +18,8 @@ def predict(model, tokenizer, sentence):
         "2009 , the Group 's net interest income increased to EUR 112.4 mn from EUR 74.3 mn in January-September 2008 "
         ".' - Output:4 \n Sentiment Classification news article: ")
 
-
-    inputs = tokenizer([prompt + "'" + sentence + "' \n Output:"], return_tensors="pt", return_attention_mask=False).to("cuda")
+    inputs = tokenizer([prompt + "'" + sentence + "' \n Output:"], return_tensors="pt", return_attention_mask=False).to(
+        "cuda")
     outputs = model.generate(**inputs, max_new_tokens=1, pad_token_id=model.config.eos_token_id)
     text = tokenizer.batch_decode(outputs)
     return int(text[-1][-1])
@@ -34,4 +35,3 @@ def predict_sentiment(df):
     df['Sentiment'] = sentiments
     print('Success! - LLM Sentiment Analysis')
     return df
-

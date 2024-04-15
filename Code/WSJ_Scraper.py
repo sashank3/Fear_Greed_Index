@@ -7,7 +7,6 @@ from datetime import datetime, timedelta
 
 # Helper functions
 def convert_relative_time(relative_time):
-
     if 'hour' in relative_time:
         hours_ago = int(relative_time.split()[0])
         return (datetime.now() - timedelta(hours=hours_ago)).strftime('%Y-%m-%d %H:%M')
@@ -25,21 +24,21 @@ def scrape_wsj_business():
     # URL of the webpage to scrape
     urls = ['https://www.wsj.com/business',
             'https://www.wsj.com/finance',
-            'https://www.wsj.com/real-estate']#,
-            # 'https://www.wsj.com/business/autos',
-            # 'https://www.wsj.com/business/earnings',
-            # 'https://www.wsj.com/business/energy-oil',
-            # 'https://www.wsj.com/business/small-business-marketing',
-            # 'https://www.wsj.com/business/telecom',
-            # 'https://www.wsj.com/business/retail',
-            # 'https://www.wsj.com/business/logistics',
-            # 'https://www.wsj.com/business/hospitality',
-            # 'https://www.wsj.com/finance/banking',
-            # 'https://www.wsj.com/finance/commodities-futures',
-            # 'https://www.wsj.com/finance/currencies',
-            # 'https://www.wsj.com/finance/stocks',
-            # 'https://www.wsj.com/finance/regulation',
-            # 'https://www.wsj.com/finance/investing']
+            'https://www.wsj.com/real-estate']  # ,
+    # 'https://www.wsj.com/business/autos',
+    # 'https://www.wsj.com/business/earnings',
+    # 'https://www.wsj.com/business/energy-oil',
+    # 'https://www.wsj.com/business/small-business-marketing',
+    # 'https://www.wsj.com/business/telecom',
+    # 'https://www.wsj.com/business/retail',
+    # 'https://www.wsj.com/business/logistics',
+    # 'https://www.wsj.com/business/hospitality',
+    # 'https://www.wsj.com/finance/banking',
+    # 'https://www.wsj.com/finance/commodities-futures',
+    # 'https://www.wsj.com/finance/currencies',
+    # 'https://www.wsj.com/finance/stocks',
+    # 'https://www.wsj.com/finance/regulation',
+    # 'https://www.wsj.com/finance/investing']
 
     # Define custom headers to mimic a real web browser
 
@@ -86,7 +85,6 @@ def scrape_wsj_business():
             # Loop through each article and extract the title and text content
             for article in articles:
 
-
                 # Find the first <a> tag within the <h3> tag
 
                 # if a_tag:
@@ -110,7 +108,7 @@ def scrape_wsj_business():
                 #         print(f'Error: Failed to retrieve content from {href}')
                 #         break
 
-                    # Extract the title from the anchor tag
+                # Extract the title from the anchor tag
                 a_tag = article.find('a')
                 href = a_tag['href']
                 title = article.text.strip()
@@ -134,5 +132,3 @@ def scrape_wsj_business():
     df = pd.DataFrame(articles_data, columns=['Title', 'Time', 'Link'])
     print('Success! - Web Scraping')
     return df
-
-
