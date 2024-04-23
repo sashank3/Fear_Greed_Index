@@ -18,9 +18,9 @@ def line_graph(ema_data):
     )
 
     layout = go.Layout(
-        title='EMA Line Graph',
+        title='Sentiment Line Graph',
         xaxis=dict(title='Time'),
-        yaxis=dict(title='EMA Value', range=[0, 100])
+        yaxis=dict(title='Sentiment Value', range=[0, 100])
     )
 
     # Create figure
