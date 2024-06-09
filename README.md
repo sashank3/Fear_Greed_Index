@@ -19,11 +19,10 @@ It aims to provide high-quality market sentiment data using SLMs through an easy
 
 <br/>
 
-**Web Scraper** - Obtains the latest news articles from the Wall Street Journal website using Beautiful Soup and Data Scraping Techniques.
-<br/>
+**Web Scraper** - Obtains the latest news articles from the Wall Street Journal website using Beautiful Soup and Data Scraping.<br/>
 **Data Cleaning** - Parses and formats the scraped data, while eliminating duplicate articles using Python and Regex.<br/>
 **Feature Engineering** - Categorizes cleaned data into financial subdomains like Real Estate, US Markets, etc. <br/>
-**Phi-2 SLM** - Performs sentiment analysis on news articles using Microsoft's Phi-2 Small Language Model and prompt engineering.<br/>
+**Phi-2 SLM** - Performs sentiment analysis on news articles using a prompt engineered Phi-2 Small Language Model.<br/>
 
 <br/>
 
