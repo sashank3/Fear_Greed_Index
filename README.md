@@ -18,7 +18,9 @@ It aims to provide high-quality market sentiment data using SLMs through an easy
 ![image](https://github.com/sashank3/Fear_Greed_Index/assets/41186713/3a7c6858-4c7d-437d-b26f-540b047a8418)
 
 <br/>
-**Web Scraper** - Obtains the latest news articles from the Wall Street Journal website using Beautiful Soup and Data Scraping Techniques.<br/>
+
+**Web Scraper** - Obtains the latest news articles from the Wall Street Journal website using Beautiful Soup and Data Scraping Techniques.
+<br/>
 **Data Cleaning** - Parses and formats the scraped data, while eliminating duplicate articles using Python and Regex.<br/>
 **Feature Engineering** - Categorizes cleaned data into financial subdomains like Real Estate, US Markets, etc. <br/>
 **Phi-2 SLM** - Performs sentiment analysis on news articles using Microsoft's Phi-2 Small Language Model and prompt engineering.<br/>
