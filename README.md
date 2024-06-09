@@ -8,7 +8,7 @@ Well, the answer is NO. How could a single individual compete against Teams of I
 
 It aims to provide high-quality market sentiment data using LLMs through an easy-to-interpret Fear & Greed Index, enabling individual investors to make more informed decisions.
 
-## System Architecture:
+## System Architecture
 
 ![image](https://github.com/sashank3/Fear_Greed_Index/assets/41186713/3a7c6858-4c7d-437d-b26f-540b047a8418)
 
